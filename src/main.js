@@ -39,8 +39,8 @@ const headMeshes = {};
 const textureLoader = new THREE.TextureLoader();
 const textures = {
   plain: null, // Will be a solid white texture
-  spots: textureLoader.load('/textures/pattern_mask_bw_1.png'),
-  stripes: textureLoader.load('/textures/pattern_mask_bw_2.png')
+  spots: textureLoader.load('./textures/pattern_mask_bw_1.png'),
+  stripes: textureLoader.load('./textures/pattern_mask_bw_2.png')
 };
 
 // Configure textures
@@ -79,7 +79,7 @@ const accentColor = new THREE.Color(randomAccent);
 let beetleMaterial;
 let headMaterial;
 
-loader.load('models/beetle2.glb', gltf => {
+loader.load('./models/beetle2.glb', gltf => {
   beetle = gltf.scene;
   scene.add(beetle);
 
