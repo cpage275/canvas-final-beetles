@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beetle Customizer</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="ui">
+    <div class="badge-container">
+      <button class="badge-btn" data-panel="head-shape" aria-label="Head Shape">
+        <img src="/head-shape-badge.svg" alt="Head Shape" />
+      </button>
+      <button class="badge-btn" data-panel="pattern" aria-label="Pattern">
+        <img src="/pattern-badge.svg" alt="Pattern" />
+      </button>
+      <button class="badge-btn" data-panel="color" aria-label="Color">
+        <img src="/color-badge.svg" alt="Color" />
+      </button>
+    </div>
+
+    <div class="panel" id="head-shape-panel">
+      <div class="panel-content">
+        <h3>Head Shape</h3>
+        <div class="head-options">
+          <button class="head-btn" data-head="Head_A">Head A</button>
+          <button class="head-btn" data-head="Head_B">Head B</button>
+          <button class="head-btn" data-head="Head_C">Head C</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="pattern-panel">
+      <div class="panel-content">
+        <h3>Pattern</h3>
+        <div class="control-group">
+          <label>
+            <span>Texture</span>
+            <div class="texture-options">
+              <button class="texture-btn" data-texture="plain">None</button>
+              <button class="texture-btn active" data-texture="spots">Pattern 1</button>
+              <button class="texture-btn" data-texture="stripes">Pattern 2</button>
+            </div>
+          </label>
+          <label>
+            <span>Iridescence Strength</span>
+            <input type="range" id="iridescenceStrength" min="0" max="3" step="0.1" value="1.5" />
+            <span class="value-display" id="iridescenceStrengthValue">1.5</span>
+          </label>
+          <label>
+            <span>Iridescence Shift</span>
+            <input type="range" id="iridescenceShift" min="0" max="1" step="0.1" value="0.3" />
+            <span class="value-display" id="iridescenceShiftValue">0.3</span>
+          </label>
+          <label>
+            <span>Shininess</span>
+            <input type="range" id="shininess" min="0" max="200" step="1" value="80" />
+            <span class="value-display" id="shininessValue">80</span>
+          </label>
+          <label>
+            <span>Specular Strength</span>
+            <input type="range" id="specularStrength" min="0" max="2" step="0.1" value="0.8" />
+            <span class="value-display" id="specularStrengthValue">0.8</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="color-panel">
+      <div class="panel-content">
+        <h3>Color</h3>
+        <div class="control-group">
+          <label>
+            <span>Base Color</span>
+            <input type="color" id="colorBase" value="#ff0000" />
+          </label>
+          <label>
+            <span>Accent Color</span>
+            <input type="color" id="colorAccent" value="#00ff00" />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
